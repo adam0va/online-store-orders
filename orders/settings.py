@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import orders.config as cnfg
+#import orders.config as cnfg
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = cnfg.secret_key
+SECRET_KEY = 'mvxfozcw$!(y23m6ve96p712t#=zhdv06q*i*olpgtd&sksacc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'orders.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': cnfg.name,
-        'USER': cnfg.user,
-        'PASSWORD': cnfg.password,
+        'NAME': "orders_db",
+        'USER': "postgres",
+        'PASSWORD': "password",
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
