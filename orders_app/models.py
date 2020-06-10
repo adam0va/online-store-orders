@@ -10,4 +10,4 @@ class Order(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     def __str__(self):
-        return f'{self.billing}, uuid: {self.uuid}'
+        return f'{self.billing}, uuid: {self.uuid}, isPaid: {self.isPaid}'

@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03ce6f39-8fec-4678-ab7e-ab49596da857" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../billing/.idea/billing.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing_app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing_app/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing_app/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing_app/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing_app/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing_app/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing_app/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing_app/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/billing_app/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../billing/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../customers/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../customers/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../customers/customers_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../customers/customers_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../customers/customers_app/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../customers/customers_app/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../items/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../items/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../billing/billing_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../billing/billing_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customers/customers_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../customers/customers_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../items/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../items/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../items/items_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../items/items_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders_app/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +90,7 @@
       <updated>1587400894302</updated>
       <workItem from="1587400896155" duration="7759000" />
       <workItem from="1591800601745" duration="219000" />
-      <workItem from="1591800907567" duration="1332000" />
+      <workItem from="1591800907567" duration="2680000" />
     </task>
     <servers />
   </component>
