@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/../billing/billing/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../billing/billing/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../items/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../items/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,7 @@
       <updated>1587400894302</updated>
       <workItem from="1587400896155" duration="7759000" />
       <workItem from="1591800601745" duration="219000" />
-      <workItem from="1591800907567" duration="2843000" />
+      <workItem from="1591800907567" duration="3688000" />
     </task>
     <servers />
   </component>
