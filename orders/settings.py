@@ -27,7 +27,7 @@ SECRET_KEY = 'mvxfozcw$!(y23m6ve96p712t#=zhdv06q*i*olpgtd&sksacc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rsoi-online-store-orders.herokuapp.com']
 
 
 # Application definition
