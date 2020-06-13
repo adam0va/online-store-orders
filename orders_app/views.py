@@ -2,16 +2,55 @@ from rest_framework import status
 from rest_framework.views import Response, Request, APIView
 from orders_app.models import Order
 from orders_app.serializers import OrderSerializer
-from rest_framework.generics import ListCreateAPIView
-#from rest_framework.parsers import MultiPartParser
+from orders_app.requesters.billing_requester import BillingRequester
+
+'''
+Заказ включает в себя список товаров, которые в него входят,
+а так же биллинг, относящийся к нему.
+Таким образом, при GET запросе, необходимо обращаться
+также к сервисам товаров и биллинга.
+При PATCH, POST, DELETE запросах обращение к сервису товаров не требуется, 
+поскольку они существуют независимо от того, находятся ли они в каком-то
+заказе.
+При DELETE запросе биллинг, соответствующий заказу, должен удаляться.
+Остальные запросы на него не влияют (но, может быть, надо сделать так,
+чтобы биллинг создавался вместе с заказом)
+'''
 
 
-class ItemList(ListCreateAPIView):
-    serializer_class = OrderSerializer
-    #parser_classes = (MultiPartParser, )
+class OrderDetail(APIView):
+    BILLING_REQUESTER = BillingRequester()
 
-    def get_queryset(self):
-        return Order.objects.all()
+    def get(self, request, **kwargs):
+        if 'uuid' in kwargs:
+            # GET-запрос с uuid
+            uuid = kwargs['uuid']
+            try:
+                order = Order.objects.get(pk=uuid)
+            except Order.DoesNotExist:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+
+            serialized = OrderSerializer(order)
+            data_to_change = serialized.data
+            if serialized.data['billing']:
+                billing_response = self.BILLING_REQUESTER.get_billing(uuid=serialized.data['billing'])
+                data_to_change['billing'] = billing_response[0].json()
+                print(data_to_change)
+
+            return Response(data_to_change, status=status.HTTP_200_OK)
+        else:
+            # GET-запрос без uuid
+            orders = Order.objects.all()
+            serialized_orders = [OrderSerializer(order).data for order in orders]
+            print(f'serialized_orders: {serialized_orders}')
+            for order in serialized_orders:
+                # добавляем к ним информацию о биллинге, если она есть
+                if order['billing']:
+                    billing_response = self.BILLING_REQUESTER.get_billing(uuid=order['billing'])
+                    order['billing'] = billing_response[0].json()
+                    print(f'order with billing: {order}')
+
+            return Response(serialized_orders, status=status.HTTP_200_OK)
 
     def post(self, request):
         data = request.data
@@ -22,23 +61,12 @@ class ItemList(ListCreateAPIView):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-class ItemDetail(APIView):
-    def get(self, request, uuid):
-        try:
-            reader = Order.objects.get(pk=uuid)
-        except Order.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-
-        serializer = OrderSerializer(reader)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
     def patch(self, request, uuid):
         try:
-            reader = Order.objects.get(pk=uuid)
+            item = Order.objects.get(pk=uuid)
         except Order.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-        serializer = OrderSerializer(instance=reader, data=request.data)
+        serializer = OrderSerializer(instance=item, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
@@ -47,8 +75,8 @@ class ItemDetail(APIView):
 
     def delete(self, request, uuid):
         try:
-            reader = Order.objects.get(uuid=uuid)
+            item = Order.objects.get(uuid=uuid)
         except Order.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-        reader.delete()
+        item.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
