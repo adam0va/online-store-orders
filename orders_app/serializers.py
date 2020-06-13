@@ -5,7 +5,7 @@ from orders_app.models import Order
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = ['itemsInOrder', 'billing', 'isPaid', 'uuid']
+        fields = ['itemsInOrder', 'billing', 'isClosed', 'uuid']
 
     def create(self, validated_data):
         new = Order(**validated_data)

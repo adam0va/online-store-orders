@@ -36,6 +36,9 @@ class OrderDetail(APIView):
                 billing_response = self.BILLING_REQUESTER.get_billing(uuid=serialized.data['billing'])
                 data_to_change['billing'] = billing_response[0].json()
                 print(data_to_change)
+            if serialized.data['items']:
+                items = serialized.data['items']
+
 
             return Response(data_to_change, status=status.HTTP_200_OK)
         else:
@@ -75,8 +78,12 @@ class OrderDetail(APIView):
 
     def delete(self, request, uuid):
         try:
-            item = Order.objects.get(uuid=uuid)
+            order = Order.objects.get(uuid=uuid)
         except Order.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-        item.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        billing_response, billing_status_code = self.BILLING_REQUESTER.get_billing(uuid=order.billing)
+        if billing_status_code == 204:
+            order.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)
