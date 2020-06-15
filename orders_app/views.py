@@ -6,6 +6,7 @@ from orders_app.requesters.billing_requester import BillingRequester
 from orders_app.requesters.items_requester import ItemsRequester
 
 '''
+8002 порт
 Заказ включает в себя список товаров, которые в него входят,
 а так же биллинг, относящийся к нему.
 Таким образом, при GET запросе, необходимо обращаться
@@ -55,6 +56,7 @@ class OrderDetail(APIView):
                 if order['itemsInOrder']:
                     for i in range(len(order['itemsInOrder'])):
                         item_response = self.ITEM_REQUESTER.get_item(uuid=order['itemsInOrder'][i])
+                        print(f'item response: {item_response}')
                         order['itemsInOrder'][i] = item_response[0].json()
 
             return Response(serialized_orders, status=status.HTTP_200_OK)
@@ -87,7 +89,7 @@ class OrderDetail(APIView):
             order = Order.objects.get(uuid=uuid)
         except Order.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-        billing_response, billing_status_code = self.BILLING_REQUESTER.get_billing(uuid=order.billing)
+        billing_response, billing_status_code = self.BILLING_REQUESTER.delete_billing(uuid=order.billing)
         if billing_status_code == 204:
             order.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
