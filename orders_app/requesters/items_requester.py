@@ -1,4 +1,12 @@
 from orders_app.requesters.requester import Requester
 
+
 class ItemsRequester(Requester):
-    pass
+    ITEMS_HOST = Requester.HOST + ':8001/'
+
+    def get_item(self, uuid):
+        response = self.get_request(self.ITEMS_HOST + str(uuid) + '/')
+        if response is None:
+            return self.BASE_HTTP_ERROR
+
+        return response, response.status_code
