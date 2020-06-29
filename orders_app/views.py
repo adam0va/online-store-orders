@@ -31,12 +31,13 @@ class OrderList(APIView):
             # добавляем к ним информацию о биллинге, если она есть
             if order['billing']:
                 billing_response = self.BILLING_REQUESTER.get_billing(uuid=order['billing'])
-                order['billing'] = billing_response[0].json()
+                if not billing_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
+                    order['billing'] = billing_response[0].json()
             if order['itemsInOrder']:
                 for i in range(len(order['itemsInOrder'])):
                     item_response = self.ITEM_REQUESTER.get_item(uuid=order['itemsInOrder'][i])
-                    print(f'item response: {item_response}')
-                    order['itemsInOrder'][i] = item_response[0].json()
+                    if not billing_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
+                        order['itemsInOrder'][i] = item_response[0].json()
 
         return Response(serialized_orders, status=status.HTTP_200_OK)
 
@@ -65,12 +66,14 @@ class OrderDetail(APIView):
         data_to_change = serialized.data
         if serialized.data['billing']:
             billing_response = self.BILLING_REQUESTER.get_billing(uuid=serialized.data['billing'])
-            data_to_change['billing'] = billing_response[0].json()
+            if not billing_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
+                data_to_change['billing'] = billing_response[0].json()
         if data_to_change['itemsInOrder']:
             # получаем список товаров
             for i in range(len(data_to_change['itemsInOrder'])):
                 item_response = self.ITEM_REQUESTER.get_item(uuid=data_to_change['itemsInOrder'][i])
-                data_to_change['itemsInOrder'][i] = item_response[0].json()
+                if not billing_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
+                    data_to_change['itemsInOrder'][i] = item_response[0].json()
 
         return Response(data_to_change, status=status.HTTP_200_OK)
 
