@@ -25,12 +25,14 @@ class OrderList(APIView):
 
     def get(self, request):
         # GET-запрос без uuid
+        print('12345')
         orders = Order.objects.all()
         serialized_orders = [OrderSerializer(order).data for order in orders]
         for order in serialized_orders:
             # добавляем к ним информацию о биллинге, если она есть
             if order['billing']:
                 billing_response = self.BILLING_REQUESTER.get_billing(uuid=order['billing'])
+                print(billing_response)
                 if not billing_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
                     order['billing'] = billing_response[0].json()
             if order['itemsInOrder']:
@@ -49,6 +51,15 @@ class OrderList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class NotDetailedOrdersList(APIView):
+    def get(self, request):
+        # GET-запрос на заказы без информации о биллинге и покупках
+        orders = Order.objects.all()
+        serialized_orders = [OrderSerializer(order).data for order in orders]
+
+        return Response(serialized_orders, status=status.HTTP_200_OK)
 
 
 class OrderDetail(APIView):
@@ -102,3 +113,16 @@ class OrderDetail(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         else:
             return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+class OrderWithoutDetail(APIView):
+    def get(self, request, uuid):
+        # GET-запрос с uuid
+        try:
+            order = Order.objects.get(pk=uuid)
+        except Order.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        serialized = OrderSerializer(order)
+
+        return Response(serialized.data, status=status.HTTP_200_OK)
