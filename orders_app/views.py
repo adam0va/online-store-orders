@@ -19,47 +19,26 @@ from orders_app.requesters.items_requester import ItemsRequester
 чтобы биллинг создавался вместе с заказом)
 '''
 
-class OrderDetail(APIView):
+class OrderList(APIView):
     BILLING_REQUESTER = BillingRequester()
     ITEM_REQUESTER = ItemsRequester()
 
-    def get(self, request, **kwargs):
-        if 'uuid' in kwargs:
-            # GET-запрос с uuid
-            uuid = kwargs['uuid']
-            try:
-                order = Order.objects.get(pk=uuid)
-            except Order.DoesNotExist:
-                return Response(status=status.HTTP_404_NOT_FOUND)
+    def get(self, request):
+        # GET-запрос без uuid
+        orders = Order.objects.all()
+        serialized_orders = [OrderSerializer(order).data for order in orders]
+        for order in serialized_orders:
+            # добавляем к ним информацию о биллинге, если она есть
+            if order['billing']:
+                billing_response = self.BILLING_REQUESTER.get_billing(uuid=order['billing'])
+                order['billing'] = billing_response[0].json()
+            if order['itemsInOrder']:
+                for i in range(len(order['itemsInOrder'])):
+                    item_response = self.ITEM_REQUESTER.get_item(uuid=order['itemsInOrder'][i])
+                    print(f'item response: {item_response}')
+                    order['itemsInOrder'][i] = item_response[0].json()
 
-            serialized = OrderSerializer(order)
-            data_to_change = serialized.data
-            if serialized.data['billing']:
-                billing_response = self.BILLING_REQUESTER.get_billing(uuid=serialized.data['billing'])
-                data_to_change['billing'] = billing_response[0].json()
-            if data_to_change['itemsInOrder']:
-                # получаем список товаров
-                for i in range(len(data_to_change['itemsInOrder'])):
-                    item_response = self.ITEM_REQUESTER.get_item(uuid=data_to_change['itemsInOrder'][i])
-                    data_to_change['itemsInOrder'][i] = item_response[0].json()
-
-            return Response(data_to_change, status=status.HTTP_200_OK)
-        else:
-            # GET-запрос без uuid
-            orders = Order.objects.all()
-            serialized_orders = [OrderSerializer(order).data for order in orders]
-            for order in serialized_orders:
-                # добавляем к ним информацию о биллинге, если она есть
-                if order['billing']:
-                    billing_response = self.BILLING_REQUESTER.get_billing(uuid=order['billing'])
-                    order['billing'] = billing_response[0].json()
-                if order['itemsInOrder']:
-                    for i in range(len(order['itemsInOrder'])):
-                        item_response = self.ITEM_REQUESTER.get_item(uuid=order['itemsInOrder'][i])
-                        print(f'item response: {item_response}')
-                        order['itemsInOrder'][i] = item_response[0].json()
-
-            return Response(serialized_orders, status=status.HTTP_200_OK)
+        return Response(serialized_orders, status=status.HTTP_200_OK)
 
     def post(self, request):
         data = request.data
@@ -69,6 +48,31 @@ class OrderDetail(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class OrderDetail(APIView):
+    BILLING_REQUESTER = BillingRequester()
+    ITEM_REQUESTER = ItemsRequester()
+
+    def get(self, request, uuid):
+        # GET-запрос с uuid
+        try:
+            order = Order.objects.get(pk=uuid)
+        except Order.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        serialized = OrderSerializer(order)
+        data_to_change = serialized.data
+        if serialized.data['billing']:
+            billing_response = self.BILLING_REQUESTER.get_billing(uuid=serialized.data['billing'])
+            data_to_change['billing'] = billing_response[0].json()
+        if data_to_change['itemsInOrder']:
+            # получаем список товаров
+            for i in range(len(data_to_change['itemsInOrder'])):
+                item_response = self.ITEM_REQUESTER.get_item(uuid=data_to_change['itemsInOrder'][i])
+                data_to_change['itemsInOrder'][i] = item_response[0].json()
+
+        return Response(data_to_change, status=status.HTTP_200_OK)
 
     def patch(self, request, uuid):
         try:

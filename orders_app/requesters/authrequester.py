@@ -1,5 +1,8 @@
 from orders_app.requesters.requester import Requester
 
+# просматривать информацию обо всех заказах, удалять может только админ
+# просматривать информацию о конкретном заказе может хозян заказа и админ
+# добавлять заказ может только приложение
 
 class AuthRequester(Requester):
     AUTH_HOST = Requester.HOST + ':8004/'
