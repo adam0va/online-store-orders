@@ -36,7 +36,7 @@ class OrderList(APIView):
             if order['itemsInOrder']:
                 for i in range(len(order['itemsInOrder'])):
                     item_response = self.ITEM_REQUESTER.get_item(uuid=order['itemsInOrder'][i])
-                    if not billing_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
+                    if not item_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
                         order['itemsInOrder'][i] = item_response[0].json()
 
         return Response(serialized_orders, status=status.HTTP_200_OK)
@@ -72,7 +72,7 @@ class OrderDetail(APIView):
             # получаем список товаров
             for i in range(len(data_to_change['itemsInOrder'])):
                 item_response = self.ITEM_REQUESTER.get_item(uuid=data_to_change['itemsInOrder'][i])
-                if not billing_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
+                if not item_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
                     data_to_change['itemsInOrder'][i] = item_response[0].json()
 
         return Response(data_to_change, status=status.HTTP_200_OK)
