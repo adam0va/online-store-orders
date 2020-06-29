@@ -90,3 +90,4 @@ Watching for file changes with StatReloader
 "GET /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 200 99
 "GET / HTTP/1.1" 200 610
 "GET /d9c78467-1948-4082-b1cc-2f7a693b40db/ HTTP/1.1" 200 208
+Watching for file changes with StatReloader
