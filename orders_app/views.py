@@ -43,6 +43,7 @@ class OrderList(APIView):
 
         return Response(serialized_orders, status=status.HTTP_200_OK)
 
+    '''
     def post(self, request):
         data = request.data
         serializer = OrderSerializer(data=data)
@@ -55,6 +56,7 @@ class OrderList(APIView):
     def post(self, request):
         # при создании заказа сразу создается биллинг
         data = request.data
+        serializer = OrderSerializer(data=data)
         billing_response, billing_status_code = self.BILLING_REQUESTER.post_billing()
         if billing_status_code != 201:
             return Response(status=billing_status_code)
@@ -63,13 +65,13 @@ class OrderList(APIView):
         order = Order.objects.create(billing=billing_uuid)
         order_json = OrderSerializer(instance=order).data
         return Response(order_json, status=status.HTTP_201_CREATED)
-    
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    '''
+
+        # if serializer.is_valid():
+        #     serializer.save()
+        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
+        # else:
+        #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 class NotDetailedOrdersList(APIView):
