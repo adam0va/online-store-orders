@@ -460,3 +460,19 @@ Watching for file changes with StatReloader
 "POST / HTTP/1.1" 201 133
 "POST / HTTP/1.1" 201 133
 "POST / HTTP/1.1" 201 133
+Watching for file changes with StatReloader
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
