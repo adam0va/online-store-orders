@@ -656,3 +656,49 @@ Unauthorized: /
 "GET / HTTP/1.1" 401 183
 "GET / HTTP/1.1" 200 2496
 "POST / HTTP/1.1" 201 133
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2698
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 27437
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2698
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2698
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/billing_requester.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 457, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 468, in raise_uncaught_exception
+    raise exc
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 494, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py", line 39, in get
+    order['billing'] = billing_data[0]
+KeyError: 0
+"GET / HTTP/1.1" 500 15101
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2562
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2790
+"GET / HTTP/1.1" 200 2790
+"GET / HTTP/1.1" 200 2790

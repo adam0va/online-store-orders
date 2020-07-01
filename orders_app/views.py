@@ -35,13 +35,14 @@ class OrderList(APIView):
                 print(billing_response)
                 if billing_status == 200:
                     billing_data = self.BILLING_REQUESTER.get_data_from_response(billing_response)
-                    order['billing'] = billing_data[0]
+                    print(billing_data)
+                    order['billing'] = billing_data
             if order['itemsInOrder']:
                 for i in range(len(order['itemsInOrder'])):
                     item_response, item_status = self.ITEM_REQUESTER.get_item(uuid=order['itemsInOrder'][i])
                     if item_status == 200:
-                        order_data = self.BILLING_REQUESTER.get_data_from_response(item_response)
-                        order['itemsInOrder'][i] = order_data[0]
+                        item_data = self.BILLING_REQUESTER.get_data_from_response(item_response)
+                        order['itemsInOrder'][i] = item_data
 
         return Response(serialized_orders, status=status.HTTP_200_OK)
 
