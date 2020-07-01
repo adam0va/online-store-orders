@@ -31,15 +31,17 @@ class OrderList(APIView):
         for order in serialized_orders:
             # добавляем к ним информацию о биллинге, если она есть
             if order['billing']:
-                billing_response = self.BILLING_REQUESTER.get_billing(uuid=order['billing'])
+                billing_response, billing_status = self.BILLING_REQUESTER.get_billing(uuid=order['billing'])
                 print(billing_response)
-                if not billing_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
-                    order['billing'] = billing_response[0].json()
+                if billing_status == 200:
+                    billing_data = self.BILLING_REQUESTER.get_data_from_response(billing_response)
+                    order['billing'] = billing_data[0]
             if order['itemsInOrder']:
                 for i in range(len(order['itemsInOrder'])):
-                    item_response = self.ITEM_REQUESTER.get_item(uuid=order['itemsInOrder'][i])
-                    if not item_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
-                        order['itemsInOrder'][i] = item_response[0].json()
+                    item_response, item_status = self.ITEM_REQUESTER.get_item(uuid=order['itemsInOrder'][i])
+                    if item_status == 200:
+                        order_data = self.BILLING_REQUESTER.get_data_from_response(item_response)
+                        order['itemsInOrder'][i] = order_data[0]
 
         return Response(serialized_orders, status=status.HTTP_200_OK)
 
@@ -97,15 +99,17 @@ class OrderDetail(APIView):
         serialized = OrderSerializer(order)
         data_to_change = serialized.data
         if serialized.data['billing']:
-            billing_response = self.BILLING_REQUESTER.get_billing(uuid=serialized.data['billing'])
-            if not billing_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
-                data_to_change['billing'] = billing_response[0].json()
+            billing_response, billing_status = self.BILLING_REQUESTER.get_billing(uuid=serialized.data['billing'])
+            if billing_status == 200:
+                billing_data = self.BILLING_REQUESTER.get_data_from_response(billing_response)
+                data_to_change['billing'] = billing_data
         if data_to_change['itemsInOrder']:
             # получаем список товаров
             for i in range(len(data_to_change['itemsInOrder'])):
-                item_response = self.ITEM_REQUESTER.get_item(uuid=data_to_change['itemsInOrder'][i])
-                if not item_response == self.ITEM_REQUESTER.BASE_HTTP_ERROR:
-                    data_to_change['itemsInOrder'][i] = item_response[0].json()
+                item_response, item_status = self.ITEM_REQUESTER.get_item(uuid=data_to_change['itemsInOrder'][i])
+                if item_status == 200:
+                    item_data = self.BILLING_REQUESTER.get_data_from_response(item_response)
+                    data_to_change['itemsInOrder'][i] = item_data
 
         return Response(data_to_change, status=status.HTTP_200_OK)
 
