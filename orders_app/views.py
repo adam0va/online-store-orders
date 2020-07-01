@@ -63,6 +63,7 @@ class OrderList(APIView):
         if billing_status_code != 201:
             return Response(status=billing_status_code)
         billing_data = self.BILLING_REQUESTER.get_data_from_response(billing_response)
+        print(billing_data)
         billing_uuid = billing_data['uuid']
         order = Order.objects.create(billing=billing_uuid)
         order_json = OrderSerializer(instance=order).data

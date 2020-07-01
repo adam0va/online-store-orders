@@ -651,3 +651,8 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 "GET /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 200 99
 "GET / HTTP/1.1" 200 2496
+Watching for file changes with StatReloader
+Unauthorized: /
+"GET / HTTP/1.1" 401 183
+"GET / HTTP/1.1" 200 2496
+"POST / HTTP/1.1" 201 133
