@@ -36,7 +36,7 @@ class AuthRequester(Requester):
             'id': app_id,
             'secret': app_secret,
         }
-        response = self.post_request(url=self.AUTH_HOST + 'app-token-auth/', data=data)
+        response = self.post_request(url=self.AUTH_HOST + 'api/app-token-auth/', data=data)
         if response is None:
             return self.BASE_HTTP_ERROR
         return response, response.status_code
@@ -45,21 +45,21 @@ class AuthRequester(Requester):
         data = {
             'token': token,
         }
-        response = self.post_request(url=self.AUTH_HOST + 'app-token-verify/', data=data)
+        response = self.post_request(url=self.AUTH_HOST + 'api/app-token-verify/', data=data)
         return response, response.status_code
 
     def app_refresh_token(self, token: str):
         data = {
             'refresh': token,
         }
-        response = self.post_request(url=self.AUTH_HOST + 'app-token-refresh/', data=data)
+        response = self.post_request(url=self.AUTH_HOST + 'api/app-token-refresh/', data=data)
 
         r_json = self.get_data_from_response(response)
         new_token = r_json['access']
         return new_token
 
     def is_token_valid(self, token: str):
-        response = self.post_request(self.AUTH_HOST + 'api-token-verify/', data={'token': token})
+        response = self.post_request(self.AUTH_HOST + 'api/api-token-verify/', data={'token': token})
         if response.status_code == None:
             return Requester().BASE_HTTP_ERROR
         return response, response.status_code

@@ -11,3 +11,9 @@ class OrderSerializer(serializers.ModelSerializer):
         new = Order(**validated_data)
         new.save()
         return new
+
+    def update(self, instance: Order, validated_data):
+        for attr, val in validated_data.items():
+            setattr(instance, attr, val)
+        instance.save()
+        return instance

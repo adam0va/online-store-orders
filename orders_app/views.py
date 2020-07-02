@@ -123,14 +123,14 @@ class OrderDetail(APIView):
 
     def patch(self, request, uuid):
         try:
-            item = Order.objects.get(pk=uuid)
+            order = Order.objects.get(pk=uuid)
         except Order.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-        serializer = OrderSerializer(instance=item, data=request.data)
+        print(request.data)
+        serializer = OrderSerializer(instance=order, data=request.data, partial=True)
         if serializer.is_valid():
-            # чтобы выводить информацию об измененном заказе подробной информацией
-            # о биллинге и товарах, добавить код здесь
             serializer.save()
+            print(serializer.data)
             return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -863,3 +863,243 @@ Not Found: /orders_short/70e3a47e-16c7-45dc-8308-47248c0c5acf/
 "GET /orders_short/70e3a47e-16c7-45dc-8308-47248c0c5acf/ HTTP/1.1" 404 0
 "GET /orders_short/ HTTP/1.1" 200 4362
 "GET /orders_short/0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 200 99
+Watching for file changes with StatReloader
+Forbidden: /
+"GET / HTTP/1.1" 403 58
+"GET / HTTP/1.1" 200 4566
+"GET /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 200 99
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+Traceback (most recent call last):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 457, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 468, in raise_uncaught_exception
+    raise exc
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 494, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py", line 130, in patch
+    print(serializer.data)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/serializers.py", line 559, in data
+    ret = super().data
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/serializers.py", line 257, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 500 16070
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+Traceback (most recent call last):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 457, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 468, in raise_uncaught_exception
+    raise exc
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 494, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py", line 131, in patch
+    serializer.update(validated_data=request.data)
+TypeError: update() missing 1 required positional argument: 'instance'
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 500 15433
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+Traceback (most recent call last):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 457, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 468, in raise_uncaught_exception
+    raise exc
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 494, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py", line 132, in patch
+    serializer.save()
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/serializers.py", line 179, in save
+    'You must call `.is_valid()` before calling `.save()`.'
+AssertionError: You must call `.is_valid()` before calling `.save()`.
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 500 15595
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+Traceback (most recent call last):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 457, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 468, in raise_uncaught_exception
+    raise exc
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 494, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py", line 132, in patch
+    if serializer.is_valid():
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/serializers.py", line 229, in is_valid
+    'Cannot call `.is_valid()` as no `data=` keyword argument was '
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 500 15731
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+Traceback (most recent call last):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 457, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 468, in raise_uncaught_exception
+    raise exc
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 494, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py", line 132, in patch
+    if serializer.is_valid():
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/serializers.py", line 229, in is_valid
+    'Cannot call `.is_valid()` as no `data=` keyword argument was '
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 500 15731
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+Traceback (most recent call last):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 457, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 468, in raise_uncaught_exception
+    raise exc
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 494, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py", line 133, in patch
+    if serializer.is_valid():
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/serializers.py", line 229, in is_valid
+    'Cannot call `.is_valid()` as no `data=` keyword argument was '
+AssertionError: Cannot call `.is_valid()` as no `data=` keyword argument was passed when instantiating the serializer instance.
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 500 15731
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+Traceback (most recent call last):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 143, in _get_response
+    response = response.render()
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/template/response.py", line 106, in render
+    self.content = self.rendered_content
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/renderers.py", line 104, in render
+    allow_nan=not self.strict, separators=separators
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/utils/json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/utils/encoders.py", line 67, in default
+    return super().default(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Order is not JSON serializable
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 500 98113
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+"PATCH /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 202 99
+"GET /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 200 99
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 200 99
+Not Found: /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+"DELETE /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 404 0
+"GET / HTTP/1.1" 200 4566
