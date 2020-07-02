@@ -60,6 +60,6 @@ class AuthRequester(Requester):
 
     def is_token_valid(self, token: str):
         response = self.post_request(self.AUTH_HOST + 'api/api-token-verify/', data={'token': token})
-        if response.status_code == None:
+        if response.status_code is None:
             return Requester().BASE_HTTP_ERROR
         return response, response.status_code
