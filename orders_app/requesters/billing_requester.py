@@ -5,9 +5,11 @@ class BillingRequester(Requester):
     BILLING_HOST = 'https://rsoi-online-store-billing.herokuapp.com/'
 
     def get_billing(self, uuid):
+        print(uuid)
         response = self.get_request(self.BILLING_HOST + str(uuid) + '/')
         if response is None:
             return self.BASE_HTTP_ERROR
+        #print(response.json())
 
         return response, response.status_code
 

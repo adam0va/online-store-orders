@@ -4,6 +4,7 @@ from orders_app.models import Order
 from orders_app.serializers import OrderSerializer
 from orders_app.requesters.billing_requester import BillingRequester
 from orders_app.requesters.items_requester import ItemsRequester
+from orders_app.permissions import IsAuthenticated
 
 '''
 8002 порт
@@ -20,6 +21,7 @@ from orders_app.requesters.items_requester import ItemsRequester
 '''
 
 class OrderList(APIView):
+    permission_classes = (IsAuthenticated, )
     BILLING_REQUESTER = BillingRequester()
     ITEM_REQUESTER = ItemsRequester()
 
@@ -32,7 +34,7 @@ class OrderList(APIView):
             # добавляем к ним информацию о биллинге, если она есть
             if order['billing']:
                 billing_response, billing_status = self.BILLING_REQUESTER.get_billing(uuid=order['billing'])
-                print(billing_response)
+                #print(billing_response)
                 if billing_status == 200:
                     billing_data = self.BILLING_REQUESTER.get_data_from_response(billing_response)
                     print(billing_data)
@@ -79,6 +81,8 @@ class OrderList(APIView):
 
 
 class NotDetailedOrdersList(APIView):
+    permission_classes = (IsAuthenticated,)
+
     def get(self, request):
         # GET-запрос на заказы без информации о биллинге и покупках
         orders = Order.objects.all()
@@ -90,6 +94,8 @@ class NotDetailedOrdersList(APIView):
 class OrderDetail(APIView):
     BILLING_REQUESTER = BillingRequester()
     ITEM_REQUESTER = ItemsRequester()
+    permission_classes = (IsAuthenticated, )
+
 
     def get(self, request, uuid):
         # GET-запрос с uuid
@@ -143,6 +149,9 @@ class OrderDetail(APIView):
 
 
 class OrderWithoutDetail(APIView):
+    permission_classes = (IsAuthenticated,)
+
+
     def get(self, request, uuid):
         # GET-запрос с uuid
         try:

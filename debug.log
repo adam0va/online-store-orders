@@ -702,3 +702,164 @@ Watching for file changes with StatReloader
 "GET / HTTP/1.1" 200 2790
 "GET / HTTP/1.1" 200 2790
 "GET / HTTP/1.1" 200 2790
+Watching for file changes with StatReloader
+"POST / HTTP/1.1" 201 133
+"GET / HTTP/1.1" 200 31172
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 31172
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/billing_requester.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 31172
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/billing_requester.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2696
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/billing_requester.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/billing_requester.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/items_requester.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /a4448f4b-b24b-45bc-b9f2-4119b2ba9236/ HTTP/1.1" 200 133
+"GET /a4448f4b-b24b-45bc-b9f2-4119b2ba9236/ HTTP/1.1" 200 133
+"GET /8cd43516-b9ac-464e-91cf-042701518402/ HTTP/1.1" 200 133
+Internal Server Error: /
+"POST / HTTP/1.1" 500 0
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"GET /a4448f4b-b24b-45bc-b9f2-4119b2ba9236/ HTTP/1.1" 200 201
+"GET /f241607c-e6c2-42e6-9811-7dfe6dbc440a/ HTTP/1.1" 200 201
+"GET /dc120eb3-8bc9-4f58-9bbc-c2f3db2b34db/ HTTP/1.1" 200 201
+"GET /42f261c7-1086-4536-bb63-cf9cdb7d06f5/ HTTP/1.1" 200 201
+"GET /48299ce6-7c73-4ea6-af5c-8773ab9cd44d/ HTTP/1.1" 200 201
+"GET /840cfec0-eefa-4dd7-904a-8ddc29bf4845/ HTTP/1.1" 200 201
+"GET /4226214d-2402-421d-a344-67899cf7f364/ HTTP/1.1" 200 201
+"GET /6b676fbd-d498-4958-814f-b3544ee1d687/ HTTP/1.1" 200 201
+"GET /ceb6048f-0657-4ad2-89cc-d65a086f91ae/ HTTP/1.1" 200 201
+"GET /8cd43516-b9ac-464e-91cf-042701518402/ HTTP/1.1" 200 201
+"GET /a4448f4b-b24b-45bc-b9f2-4119b2ba9236/ HTTP/1.1" 200 201
+"GET /f241607c-e6c2-42e6-9811-7dfe6dbc440a/ HTTP/1.1" 200 201
+"GET /dc120eb3-8bc9-4f58-9bbc-c2f3db2b34db/ HTTP/1.1" 200 201
+"GET /42f261c7-1086-4536-bb63-cf9cdb7d06f5/ HTTP/1.1" 200 201
+"GET /48299ce6-7c73-4ea6-af5c-8773ab9cd44d/ HTTP/1.1" 200 201
+"GET /840cfec0-eefa-4dd7-904a-8ddc29bf4845/ HTTP/1.1" 200 201
+"GET /4226214d-2402-421d-a344-67899cf7f364/ HTTP/1.1" 200 201
+"GET /6b676fbd-d498-4958-814f-b3544ee1d687/ HTTP/1.1" 200 201
+"GET /ceb6048f-0657-4ad2-89cc-d65a086f91ae/ HTTP/1.1" 200 201
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+"POST / HTTP/1.1" 201 133
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/billing_requester.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/billing_requester.py changed, reloading.
+Watching for file changes with StatReloader
+"POST / HTTP/1.1" 201 133
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/billing_requester.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /orders_short/ HTTP/1.1" 200 4362
+Internal Server Error: /orders_short/0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+Traceback (most recent call last):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 457, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 468, in raise_uncaught_exception
+    raise exc
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 485, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 403, in initial
+    self.check_permissions(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/permissions.py", line 31, in has_permission
+    return int(view.kwargs[view.lookup_url_kwarg]) == auth_json['id'] or auth_json['is_superuser']
+AttributeError: 'OrderWithoutDetail' object has no attribute 'lookup_url_kwarg'
+"PATCH /orders_short/0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 500 15583
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /orders_short/0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+"PATCH /orders_short/0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 403 58
+Forbidden: /orders_short/0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+"PATCH /orders_short/0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 403 58
+Forbidden: /orders_short/0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
+"PATCH /orders_short/0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 403 58
+Not Found: /orders_short/70e3a47e-16c7-45dc-8308-47248c0c5acf/
+"GET /orders_short/70e3a47e-16c7-45dc-8308-47248c0c5acf/ HTTP/1.1" 404 0
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /orders_short/70e3a47e-16c7-45dc-8308-47248c0c5acf/
+Traceback (most recent call last):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 497, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 457, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 468, in raise_uncaught_exception
+    raise exc
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 485, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 403, in initial
+    self.check_permissions(request)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/rest_framework/views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/permissions.py", line 62, in has_permission
+    return AuthRequester().is_token_valid(token)[1]
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/authrequester.py", line 61, in is_token_valid
+    response = self.post_request('api-token-verify/', data={'token': token})
+  File "/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/requester.py", line 19, in post_request
+    response = requests.post(url=url, json=data, headers=headers)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/requests/api.py", line 116, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/requests/sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/requests/sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/requests/models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "/Users/malenkijkotik/Desktop/progs/rsoi/env/lib/python3.7/site-packages/requests/models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'api-token-verify/': No schema supplied. Perhaps you meant http://api-token-verify/?
+"GET /orders_short/70e3a47e-16c7-45dc-8308-47248c0c5acf/ HTTP/1.1" 500 17300
+/Users/malenkijkotik/Desktop/progs/rsoi-online-store/online-store-orders/orders_app/requesters/authrequester.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /orders_short/70e3a47e-16c7-45dc-8308-47248c0c5acf/
+"GET /orders_short/70e3a47e-16c7-45dc-8308-47248c0c5acf/ HTTP/1.1" 404 0
+"GET /orders_short/ HTTP/1.1" 200 4362
+"GET /orders_short/0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 200 99
