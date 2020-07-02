@@ -154,7 +154,7 @@ class OrderDetail(APIView):
 
 
 class OrderWithoutDetail(APIView):
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request, uuid):
         # GET-запрос с uuid
