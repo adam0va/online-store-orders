@@ -1103,3 +1103,8 @@ Watching for file changes with StatReloader
 Not Found: /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/
 "DELETE /0152bdde-a2bb-48bd-87c1-cea7d78ac5af/ HTTP/1.1" 404 0
 "GET / HTTP/1.1" 200 4566
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 6130
+Forbidden: /
+"POST / HTTP/1.1" 403 58
+"POST / HTTP/1.1" 201 133

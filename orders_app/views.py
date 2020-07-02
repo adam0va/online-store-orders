@@ -5,6 +5,7 @@ from orders_app.serializers import OrderSerializer
 from orders_app.requesters.billing_requester import BillingRequester
 from orders_app.requesters.items_requester import ItemsRequester
 from orders_app.permissions import IsAuthenticated
+from orders_app.requesters.requester import Requester
 
 '''
 8002 порт
@@ -31,9 +32,10 @@ class OrderList(APIView):
         orders = Order.objects.all()
         serialized_orders = [OrderSerializer(order).data for order in orders]
         for order in serialized_orders:
+            token = Requester().get_token_from_request(request)
             # добавляем к ним информацию о биллинге, если она есть
             if order['billing']:
-                billing_response, billing_status = self.BILLING_REQUESTER.get_billing(uuid=order['billing'])
+                billing_response, billing_status = self.BILLING_REQUESTER.get_billing(uuid=order['billing'], token=token)
                 #print(billing_response)
                 if billing_status == 200:
                     billing_data = self.BILLING_REQUESTER.get_data_from_response(billing_response)
@@ -62,7 +64,8 @@ class OrderList(APIView):
         # при создании заказа сразу создается биллинг
         data = request.data
         serializer = OrderSerializer(data=data)
-        billing_response, billing_status_code = self.BILLING_REQUESTER.post_billing()
+        token = Requester().get_token_from_request(request)
+        billing_response, billing_status_code = self.BILLING_REQUESTER.post_billing(token=token)
         if billing_status_code != 201:
             return Response(status=billing_status_code)
         billing_data = self.BILLING_REQUESTER.get_data_from_response(billing_response)
@@ -106,15 +109,16 @@ class OrderDetail(APIView):
 
         serialized = OrderSerializer(order)
         data_to_change = serialized.data
+        token = Requester().get_token_from_request(request)
         if serialized.data['billing']:
-            billing_response, billing_status = self.BILLING_REQUESTER.get_billing(uuid=serialized.data['billing'])
+            billing_response, billing_status = self.BILLING_REQUESTER.get_billing(uuid=serialized.data['billing'], token=token)
             if billing_status == 200:
                 billing_data = self.BILLING_REQUESTER.get_data_from_response(billing_response)
                 data_to_change['billing'] = billing_data
         if data_to_change['itemsInOrder']:
             # получаем список товаров
             for i in range(len(data_to_change['itemsInOrder'])):
-                item_response, item_status = self.ITEM_REQUESTER.get_item(uuid=data_to_change['itemsInOrder'][i])
+                item_response, item_status = self.ITEM_REQUESTER.get_item(uuid=data_to_change['itemsInOrder'][i], token=token)
                 if item_status == 200:
                     item_data = self.BILLING_REQUESTER.get_data_from_response(item_response)
                     data_to_change['itemsInOrder'][i] = item_data
@@ -140,7 +144,8 @@ class OrderDetail(APIView):
             order = Order.objects.get(uuid=uuid)
         except Order.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-        billing_response, billing_status_code = self.BILLING_REQUESTER.delete_billing(uuid=order.billing)
+        token = Requester().get_token_from_request(request)
+        billing_response, billing_status_code = self.BILLING_REQUESTER.delete_billing(uuid=order.billing, token=token)
         if billing_status_code == 204:
             order.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
