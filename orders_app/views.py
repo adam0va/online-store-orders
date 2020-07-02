@@ -118,7 +118,7 @@ class OrderDetail(APIView):
         if data_to_change['itemsInOrder']:
             # получаем список товаров
             for i in range(len(data_to_change['itemsInOrder'])):
-                item_response, item_status = self.ITEM_REQUESTER.get_item(uuid=data_to_change['itemsInOrder'][i], token=token)
+                item_response, item_status = self.ITEM_REQUESTER.get_item(uuid=data_to_change['itemsInOrder'][i])
                 if item_status == 200:
                     item_data = self.BILLING_REQUESTER.get_data_from_response(item_response)
                     data_to_change['itemsInOrder'][i] = item_data
