@@ -4,7 +4,7 @@ from orders_app.models import Order
 from orders_app.serializers import OrderSerializer
 from orders_app.requesters.billing_requester import BillingRequester
 from orders_app.requesters.items_requester import ItemsRequester
-from orders_app.permissions import IsAuthenticated
+from orders_app.permissions import IsAuthenticated, IsAppTokenCorrect
 from orders_app.requesters.requester import Requester
 
 '''
@@ -84,7 +84,7 @@ class OrderList(APIView):
 
 
 class NotDetailedOrdersList(APIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, IsAppTokenCorrect)
 
     def get(self, request):
         # GET-запрос на заказы без информации о биллинге и покупках
@@ -154,7 +154,7 @@ class OrderDetail(APIView):
 
 
 class OrderWithoutDetail(APIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, IsAppTokenCorrect)
 
     def get(self, request, uuid):
         # GET-запрос с uuid
